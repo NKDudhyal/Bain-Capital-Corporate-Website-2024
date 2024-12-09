@@ -1,8 +1,7 @@
 import {
-  setupEnvironment,
-  cookiepom,
+  cookiePom,
   newsPom,
-  newsdetialpom,
+  newsdetialPom,
   randomBusniessOption,
   randomYearOption,
   randomExistBusinessNews,
@@ -11,6 +10,14 @@ import {
   randomNotExistBusiness,
   randomNotExistYear,
   headerPom,
+  peoplepom,
+  randomPeopleLocation,
+  titleSelection,
+  randomPeopleBusniess,
+  random_people_VenturesFocus,
+  random_people_CreditFocus,
+  random_people_PrivateEquityFocus,
+  random_peopleNames,
 } from "../support/setup";
 
 
@@ -54,7 +61,7 @@ describe("News Detail Page Tests", function () {
 
             // Validate breadcrumb matches captured news type
             let newsTypeCaptured = name.toLowerCase();
-            newsdetialpom
+            newsdetialPom
               .verifyBreadcrumbText()
               .invoke("text")
               .then((text) => {
@@ -111,7 +118,7 @@ describe("News Detail Page Tests", function () {
             // Validate breadcrumb matches captured business option
             let businessCaptured = name.toLowerCase();
             cy.log(businessCaptured);
-            newsdetialpom
+            newsdetialPom
               .verifyBreadcrumbText()
               .invoke("text")
               .then((text) => {
@@ -167,7 +174,7 @@ describe("News Detail Page Tests", function () {
             // Validate breadcrumb matches captured year
             let dateAndYearCaptured = name.toLowerCase();
             cy.log(dateAndYearCaptured);
-            newsdetialpom
+            newsdetialPom
               .verifyBreadcrumbText()
               .invoke("text")
               .then((text) => {
@@ -221,7 +228,7 @@ describe("News Detail Page Tests", function () {
             cy.wait(5000);
 
             // Navigate back to the news list using breadcrumb link
-            newsdetialpom.clickOnNewsBreadcrumb().click({ force: true });
+            newsdetialPom.clickOnNewsBreadcrumb().click({ force: true });
 
             // Verify URL returns to the main news page
             cy.url().should("eq", "https://www.baincapital.com/news");

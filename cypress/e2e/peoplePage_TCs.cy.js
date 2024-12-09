@@ -1,8 +1,7 @@
 import {
-  setupEnvironment,
-  cookiepom,
+  cookiePom,
   newsPom,
-  newsdetialpom,
+  newsdetialPom,
   randomBusniessOption,
   randomYearOption,
   randomExistBusinessNews,
@@ -10,7 +9,7 @@ import {
   randomNewsTypes,
   randomNotExistBusiness,
   randomNotExistYear,
-  headerpom,
+  headerPom,
   peoplepom,
   randomPeopleLocation,
   titleSelection,
@@ -25,7 +24,7 @@ describe("People Page Tests", function () {
   setupEnvironment();
 
   it("TC001 ==> Verfiy that location dropdown work properly.", function () {
-    headerpom.people_btn().click({ force: true });
+    headerPom.people_btn().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleLocation_Dropdown_btn().click({ force: true });

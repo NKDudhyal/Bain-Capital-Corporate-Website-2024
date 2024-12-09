@@ -1,11 +1,11 @@
 /// <reference types='Cypress'/>
 
 // Import Page Object Model classes and test data
-import cookie_pageObjectModel from "../pageObjectModel/cookies_pageObjectModel";
-import news_pageObjectModel from "../pageObjectModel/news_pageObjectModel";
-import newsDetail_pageObjectModel from "../pageObjectModel/newsDetail_pageObjectModel";
-import header_pageObjectModel from "../pageObjectModel/header_pageObjectModel";
-import people_pageObjectModel from "../pageObjectModel/people_pageObjectModel";
+import cookie_pageObjectModel from "../pageObjectModel/cookies_POM";
+import news_pageObjectModel from "../pageObjectModel/news_POM";
+import newsDetail_pageObjectModel from "../pageObjectModel/newsDetail_POM";
+import header_pageObjectModel from "../pageObjectModel/header_POM";
+import people_pageObjectModel from "../pageObjectModel/people_POM";
 
 import * as newstestData from "../fixtures/newsTestData.json";
 import * as peopletestdata from "../fixtures/peopleTestData.json";
@@ -15,7 +15,7 @@ import * as peopletestdata from "../fixtures/peopleTestData.json";
 let headerPom;
 let cookiePom;
 let newsPom;
-let newsdetialpom;
+let newsdetialPom;
 let peoplepom;
 
 let randomBusniessOption;
@@ -42,7 +42,7 @@ export function setupEnvironment() {
     headerPom = new header_pageObjectModel();
     cookiePom = new cookie_pageObjectModel();
     newsPom = new news_pageObjectModel();
-    newsdetialpom = new newsDetail_pageObjectModel();
+    newsdetialPom = new newsDetail_pageObjectModel();
     peoplepom = new people_pageObjectModel();
 
     Cypress.on("uncaught:exception", (err) => {
@@ -129,7 +129,7 @@ export function setupEnvironment() {
 export {
   cookiePom,
   newsPom,
-  newsdetialpom,
+  newsdetialPom,
   randomBusniessOption,
   randomYearOption,
   randomExistBusinessNews,
