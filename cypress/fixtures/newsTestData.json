@@ -1,0 +1,51 @@
+{
+  "businessOption": [
+    "Credit",
+    "Crypto",
+    "Double Impact",
+    "Insurance",
+    "Life Science",
+    "Partnership Strategies",
+    "Private Equity",
+    "Public Equity",
+    "Real Estate",
+    "Special Situation",
+    "Tech Opportunities",
+    "Ventures"
+  ],
+  "existBusinessNews": [
+    "Tech Opportunities",
+    "Real Estate"
+  ],
+  "notExistBuniessNews": [
+    "Public Equity",
+    "Real Estate"
+  ],
+  "yearOption": [
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019",
+    "2020",
+    "2021",
+    "2022",
+    "2023",
+    "2024"
+  ],
+  "existYearNews": [
+    "2022",
+    "2023",
+    "2024"
+  ],
+  "notExistYear": [
+    "2018",
+    "2014"
+  ],
+  "newsTypes": [
+    "Press releases",
+    "In the news"
+  ]
+}
