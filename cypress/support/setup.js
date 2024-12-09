@@ -122,8 +122,7 @@ export function setupEnvironment() {
         Math.floor(Math.random() * newstestData.yearOption.length)
       ];
 
-    cy.wait(3000);
-    cookiePom.continueBtn().click();
+    cookiePom.continueBtn({timeout:5000}).click();
   });
 }
 export {

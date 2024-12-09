@@ -1,4 +1,5 @@
 import {
+  setupEnvironment,
   cookiePom,
   newsPom,
   newsdetialPom,
@@ -23,8 +24,8 @@ import {
 describe("News page Tests", function () {
   setupEnvironment();
 
-  it("TC001 ==> Verify that business dropdown functionality works properly.", function () {
-    headerPom.news_lnk().click({force:true})
+  it.only("TC001 ==> Verify that business dropdown functionality works properly.", function () {
+    headerPom.news_lnk().click()
     cy.wait(1000);
 
     // Click on the business dropdown to expand the list of options.
