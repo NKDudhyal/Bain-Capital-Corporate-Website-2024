@@ -112,7 +112,7 @@ class news_pageObjectModel {
 
   /****************************************************************************************** */
 
-  getTheListAllNews(){
+  get_The_List_All_News(){
     return cy.get("#news-listing-wrap")
   }
 

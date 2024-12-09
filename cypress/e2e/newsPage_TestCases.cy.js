@@ -70,7 +70,7 @@ describe("News page Tests", function () {
     );
   });
 
-  it.only("TC004 ==> Verify that In The News functionality works properly.", function () {
+  it("TC004 ==> Verify that In The News functionality works properly.", function () {
     headerPom.news_lnk().click({force:true})
     cy.wait(1000);
 
