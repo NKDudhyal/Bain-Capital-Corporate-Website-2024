@@ -1,8 +1,6 @@
 import {
   setupEnvironment,
-  cookiePom,
   newsPom,
-  newsdetialPom,
   randomBusniessOption,
   randomYearOption,
   randomExistBusinessNews,
@@ -11,14 +9,6 @@ import {
   randomNotExistBusiness,
   randomNotExistYear,
   headerPom,
-  peoplepom,
-  randomPeopleLocation,
-  titleSelection,
-  randomPeopleBusniess,
-  random_people_VenturesFocus,
-  random_people_CreditFocus,
-  random_people_PrivateEquityFocus,
-  random_peopleNames,
 } from "../support/setup";
 
 describe("News page Tests", () => {
