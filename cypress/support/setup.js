@@ -36,6 +36,7 @@ let random_peopleNames;
 
 export function setupEnvironment() {
   beforeEach("Setup Test Environment", function () {
+    
     cy.viewport("macbook-15");
     cy.visit("https://www.baincapital.com");
 
@@ -123,6 +124,12 @@ export function setupEnvironment() {
       ];
 
     cookiePom.continueBtn({timeout:5000}).click();
+  });
+
+  afterEach(() => {
+    // Actions after each test
+    cy.wait(3000)
+    cy.log('Test completed.');
   });
 }
 export {

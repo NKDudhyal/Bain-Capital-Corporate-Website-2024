@@ -1,8 +1,7 @@
 import {
-  cookiePom,
+  setupEnvironment,
   newsPom,
   newsdetialPom,
-  randomBusniessOption,
   randomYearOption,
   randomExistBusinessNews,
   randomExistYearNews,
@@ -10,33 +9,23 @@ import {
   randomNotExistBusiness,
   randomNotExistYear,
   headerPom,
-  peoplepom,
-  randomPeopleLocation,
-  titleSelection,
-  randomPeopleBusniess,
-  random_people_VenturesFocus,
-  random_people_CreditFocus,
-  random_people_PrivateEquityFocus,
-  random_peopleNames,
 } from "../support/setup";
 
 
 describe("News Detail Page Tests", function () {
   setupEnvironment();
 
-  it("TC001 ==> Verify news type in breadcrumb matches the selected news type.", function () {
-    headerPom.news_lnk().click({force:true})
-    cy.wait(1000);
+  it.only("TC001 ==> Verify news type in breadcrumb matches the selected news type.", function () {
+    headerPom.news_lnk({timeout:5000}).click({force:true})
     // Select a random business news type and click it
     newsPom
-      .select_Busniess_Option_From_Dropdown(randomExistBusinessNews)
+      .select_Busniess_Option_From_Dropdown(randomExistBusinessNews,{timeout:5000})
       .click({ force: true });
-      cy.wait(2000);
     // Click the "Press Releases" button
-    newsPom.press_Releases_btn().click({ force: true });
-    cy.wait(10000);
+    newsPom.press_Releases_btn({timeout:5000}).click({ force: true });
     // Capture the first tag text and verify breadcrumb text matches
-    cy.get(".tag-text")
+    cy.wait(3000)
+    cy.get(".tag-text",)
       .first()
       .invoke("text")
       .then((name) => {

@@ -35,7 +35,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC002 ==> Verfiy that title dropdown work properly.", function () {
-    headerpom.people_btn().click({ force: true });
+    headerPom.people_btn().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleTitle_Dropdown_btn().click({ force: true });
@@ -43,8 +43,8 @@ describe("People Page Tests", function () {
     peoplepom.verify_Selected_People_Title_Option_Visible(titleSelection);
   });
 
-  it("TC003 ==> Verfiy that title dropdown work properly.", function () {
-    headerpom.people_btn().click({ force: true });
+  it("TC003 ==> Verfiy that business dropdown work properly.", function () {
+    headerPom.people_btn().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
@@ -58,7 +58,7 @@ describe("People Page Tests", function () {
 
   it("TC004 ==> Verify that after selecting Credit, Private Equity, and Ventures options, the Focus dropdown is visible.", function () {
     // Navigate to People page
-    headerpom.people_btn().click({ force: true });
+    headerPom.people_btn().click({ force: true });
     cy.wait(3000);
 
     // Load data from peopleTestData.json
@@ -87,7 +87,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC005 ==> Verfiy that focus dropdown work properly for Business Ventures option.", function () {
-    headerpom.people_btn().click({ force: true });
+    headerPom.people_btn().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
@@ -108,7 +108,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC006 ==> Verfiy that focus dropdown work properly for Business Credit option.", function () {
-    headerpom.people_btn().click({ force: true });
+    headerPom.people_btn().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
@@ -129,7 +129,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC007 ==> Verfiy that focus dropdown work properly for Business Private Equity option.", function () {
-    headerpom.people_btn().click({ force: true });
+    headerPom.people_btn().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
@@ -152,7 +152,7 @@ describe("People Page Tests", function () {
   });
 
   it.only("TC008 ==> Verfiy search functionlaity works properly.", function () {
-    headerpom.people_btn().click({ force: true });
+    headerPom.people_btn().click({ force: true });
     cy.wait(3000);
 
     peoplepom.set_searchField().type(random_peopleNames, { force: true });
@@ -164,4 +164,6 @@ describe("People Page Tests", function () {
       .invoke("text")
       .should("eq", random_peopleNames);
   });
+
+  it.only("TC009 ==> ")
 });

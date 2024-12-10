@@ -21,8 +21,8 @@ class news_pageObjectModel {
     );
   }
 
-  get_Business_Tags_From_List(randomExistBusinessNews){
-    return cy.get(".news-listing-wrap .news-date .tag-normal-text")
+  get_Business_Tags_From_List(){
+    return cy.get("#news-listing-wrap .tag-normal-text")
   }
 
   /********************************************************************************************* */
@@ -113,8 +113,18 @@ class news_pageObjectModel {
   /****************************************************************************************** */
 
   get_The_List_All_News(){
-    return cy.get("#news-listing-wrap")
+    return cy.get("#news-listing-wrap .news-title a")
   }
+
+  get_Year_Tags_From_List(){
+    return cy.get("#news-listing-wrap .date-text")
+  }
+
+  get_newType_Tags_From_List(){
+    return cy.get("#news-listing-wrap .tag-text")
+  }
+
+
 
 }
 
