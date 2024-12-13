@@ -1,3 +1,4 @@
+require('cypress-xpath');
 
 Cypress.Commands.add("scrollToLastNews", (newsPom) => {
   const startTime = new Date().getTime();

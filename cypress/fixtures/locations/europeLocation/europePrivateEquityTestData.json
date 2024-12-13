@@ -1,0 +1,20 @@
+{
+    "londonLoctionDetails": {
+      "locationName": "London",
+      "address": "Devonshire House Mayfair Place London W1J 8AJ United Kingdom",
+      "mainNum": "+44 20 7514 5252",
+      "faxNum": "+44 20 7514 5250"
+    },
+    "madridLoctionDetails": {
+      "locationName": "Madrid",
+      "address": "Calle de Serrano n°38 1st Floor Madrid 28001 Spain",
+      "mainNum": "",
+      "faxNum": ""
+    },
+    "munichLoctionDetails": {
+      "locationName": "Munich",
+      "address": "Maximilianstraße 11 80539 München Germany",
+      "mainNum": "+49-89244410700",
+      "faxNum": "+49-89244410731"
+    }
+}

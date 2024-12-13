@@ -1,0 +1,53 @@
+{
+    "hongKongLocationDetails": {
+      "locationName": "Hong Kong",
+      "address": "Suite 2501, Level 25 One Pacific Place 88 Queensway Admiralty Hong Kong",
+      "mainNum": "+852-36566800",
+      "faxNum": "+852-36566801"
+    },
+    "mumbaiLocationDetails": {
+      "locationName": "Mumbai",
+      "address": "Unit 2201, 22nd Floor, Express Towers Nariman Point Mumbai Maharashtra 400 021 India",
+      "mainNum": "+91-2267528000",
+      "faxNum": "+91-2267528010"
+    },
+    "osakaLocationDetails": {
+      "locationName": "Osaka",
+      "address": "Grand Front Osaka Tower A 24F 4-20 Ofukacho Kita-ku Osaka 530-0011 Japan",
+      "mainNum": "+81 6-7712-2777",
+      "faxNum": ""
+    },
+    "seoulLocationDetails": {
+      "locationName": "Seoul",
+      "address": "28F, Parnas Tower 521, Teheran-ro, Gangnam-gu Seoul 06164 Korea, Republic of",
+      "mainNum": "+82 2 6940 2300",
+      "faxNum": "+82 2 6322 9822"
+    },
+    "shanghaiLocationDetails": {
+      "address1": {
+        "locationName": "Shanghai",
+        "address": "Room 4705, 47/f, Office Tower 2, Plaza 66, 1266 Nanjing Road West, Jing An District Shanghai China",
+        "mainNum": "+86-21-22508000",
+        "faxNum": ""
+      },
+      "address2": {
+        "locationName": "Shanghai",
+        "address": "Room 3669, 36/F Two IFC 8 Century Boulevard Shanghai, 200120 China",
+        "mainNum": "+86-2160626120",
+        "faxNum": "+86-2160626121"
+      }
+    },
+    "sydneyLocationDetails": {
+      "locationName": "Sydney",
+      "address": "Level 28 88 Phillip Street Sydney NSW 2000 Australia",
+      "mainNum": "+61-2-9093-5500",
+      "faxNum": ""
+    },
+    "tokyoLocationDetails": {
+      "locationName": "Tokyo",
+      "address": "5F, Palace Building 1-1-1 Marunouchi Chiyoda-ku Tokyo 100-0005 Japan",
+      "mainNum": "+81-362127070",
+      "faxNum": "+81-362127071"
+    }
+  }
+  

@@ -1,5 +1,5 @@
 {
-  "peopleNames": [
+  "allPeopleNames": [
     "Akshar    Agarwal",
     "Darren  Abrahamson",
     "Bode  Adunbarin",
@@ -805,6 +805,10 @@
     "Sydney",
     "Tokyo"
   ],
+  "peopleNames": [
+    "Akshar    Agarwal",
+    "Darren  Abrahamson"
+  ],
   "peopleBusiness": [
     "Corporate",
     "Credit",
@@ -877,12 +881,6 @@
       "peopleName": "Darren  Abrahamson",
       "designationName": "Partner",
       "businessTypeName": "Tech Opportunities",
-      "locationName": "Boston"
-    },
-    {
-      "peopleName": "Bode  Adunbarin",
-      "designationName": "Vice President",
-      "businessTypeName": "Real Estate",
       "locationName": "Boston"
     },
     {
@@ -5555,3 +5553,4 @@
     }
   ]
 }
+    

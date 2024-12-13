@@ -1,0 +1,14 @@
+{
+    "bostonLoctionDetails": {
+      "locationName":"Boston",
+      "address": "200 Clarendon Street Boston MA 02116 United States",
+      "mainNum": "+1 (617) 516-2000",
+      "faxNum": "+1 (617) 516-2010"
+    },
+    "chicagoLoctionDetails": {
+      "locationName":"Chicago",
+      "address": "222 West Adams Street Suite 2200 Chicago IL 60606 United States",
+      "mainNum": "+1 (312) 253-6940",
+      "faxNum": ""
+    }
+}

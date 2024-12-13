@@ -1,0 +1,38 @@
+{
+  "dublinLoctionDetails": {
+    "locationName": "Dublin",
+    "address": "45 Mespil Road Dublin 4 Ireland +353-19019800 +353-16335380",
+    "mainNum": "",
+    "faxNum": ""
+  },
+  "lisbonLoctionDetails": {
+    "locationName": "Lisbon",
+    "address": "Av. da Liberdade 245 4C Office 414 Lisbon 1250-143 Portugal",
+    "mainNum": "",
+    "faxNum": ""
+  },
+  "londonLoctionDetails": {
+    "locationName": "London",
+    "address": "Devonshire House Mayfair Place London W1J 8AJ United Kingdom",
+    "mainNum": "+44 20 7514 5252",
+    "faxNum": "+44 20 7514 5250"
+  },
+  "luxembourgLoctionDetails": {
+    "locationName": "Luxembourg",
+    "address": "2 Rue Edward Steichen 1st Floor Oksigen Building L-2540 Luxembourg",
+    "mainNum": "+352 27 94 2930",
+    "faxNum": ""
+  },
+  "madridLoctionDetails": {
+    "locationName": "Madrid",
+    "address": "Calle de Serrano n°38 1st Floor Madrid 28001 Spain",
+    "mainNum": "",
+    "faxNum": ""
+  },
+  "munichLoctionDetails": {
+    "locationName": "Munich",
+    "address": "Maximilianstraße 11 80539 München Germany",
+    "mainNum": "+49-89244410700",
+    "faxNum": "+49-89244410731"
+  }
+}

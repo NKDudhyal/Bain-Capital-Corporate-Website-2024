@@ -1,0 +1,15 @@
+{
+    "bostonLocationDetails": {
+        "locationName":"Boston",
+        "address": "200 Clarendon Street Boston MA 02116 United States",
+        "mainNum": "+1 (617) 516-2000",
+        "faxNum": "+1 (617) 516-2010"
+      },
+      "sanFranciscoLocationDetails": {
+        "locationName":"San Francisco",
+        "address": "450 Pacific Avenue San Francisco CA 94133 United States",
+        "mainNum": "+1 (628) 201-3600",
+        "faxNum": ""
+      }
+
+}

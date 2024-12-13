@@ -95,6 +95,11 @@ class people_pageObjectModel {
   verify_People_Name(){
     return cy.get('.team-bg .team-desc h4 span')
   }
+
+  noMoreRecordsMsg() {
+    return cy.get("#people-listing .alert", { timeout: 5000 });
+  }
+
 }
 
 export default people_pageObjectModel;

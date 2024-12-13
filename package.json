@@ -10,5 +10,8 @@
   "description": "",
   "dependencies": {
     "cypress": "^13.16.0"
+  },
+  "devDependencies": {
+    "cypress-xpath": "^2.0.1"
   }
 }

@@ -1,14 +1,5 @@
 import {
-  cookiePom,
-  newsPom,
-  newsdetialPom,
-  randomBusniessOption,
-  randomYearOption,
-  randomExistBusinessNews,
-  randomExistYearNews,
-  randomNewsTypes,
-  randomNotExistBusiness,
-  randomNotExistYear,
+  setupEnvironment,
   headerPom,
   peoplepom,
   randomPeopleLocation,
@@ -18,13 +9,14 @@ import {
   random_people_CreditFocus,
   random_people_PrivateEquityFocus,
   random_peopleNames,
+  peopletestdata,
 } from "../support/setup";
 
 describe("People Page Tests", function () {
   setupEnvironment();
 
   it("TC001 ==> Verfiy that location dropdown work properly.", function () {
-    headerPom.people_btn().click({ force: true });
+    headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleLocation_Dropdown_btn().click({ force: true });
@@ -35,7 +27,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC002 ==> Verfiy that title dropdown work properly.", function () {
-    headerPom.people_btn().click({ force: true });
+    headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleTitle_Dropdown_btn().click({ force: true });
@@ -44,7 +36,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC003 ==> Verfiy that business dropdown work properly.", function () {
-    headerPom.people_btn().click({ force: true });
+    headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
@@ -58,7 +50,7 @@ describe("People Page Tests", function () {
 
   it("TC004 ==> Verify that after selecting Credit, Private Equity, and Ventures options, the Focus dropdown is visible.", function () {
     // Navigate to People page
-    headerPom.people_btn().click({ force: true });
+    headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
     // Load data from peopleTestData.json
@@ -87,7 +79,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC005 ==> Verfiy that focus dropdown work properly for Business Ventures option.", function () {
-    headerPom.people_btn().click({ force: true });
+    headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
@@ -108,7 +100,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC006 ==> Verfiy that focus dropdown work properly for Business Credit option.", function () {
-    headerPom.people_btn().click({ force: true });
+    headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
@@ -129,7 +121,7 @@ describe("People Page Tests", function () {
   });
 
   it("TC007 ==> Verfiy that focus dropdown work properly for Business Private Equity option.", function () {
-    headerPom.people_btn().click({ force: true });
+    headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
     peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
@@ -151,8 +143,8 @@ describe("People Page Tests", function () {
     );
   });
 
-  it.only("TC008 ==> Verfiy search functionlaity works properly.", function () {
-    headerPom.people_btn().click({ force: true });
+  it("TC008 ==> Verfiy search functionality works properly.", function () {
+    headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
     peoplepom.set_searchField().type(random_peopleNames, { force: true });
@@ -165,5 +157,60 @@ describe("People Page Tests", function () {
       .should("eq", random_peopleNames);
   });
 
-  it.only("TC009 ==> ")
+  it.only("TC008 ==> Verify search functionality for multiple names", function () {
+    headerPom.people_lnk().click({ force: true });
+    cy.wait(2000);
+    // Array to hold results
+    const results = [];
+
+    // Iterate through each name in peopleNames array
+    peopletestdata.peopleNames.forEach((name) => {
+      // Normalize spaces in the name
+      const normalizedName = name.replace(/\s+/g, " ").trim();
+      const trimedName = normalizedName.trim();
+      cy.log(`Processing normalized name: ${normalizedName}`);
+
+      // Enter the normalized name into the search field
+      peoplepom
+        .set_searchField()
+        .clear({ force: true })
+        .type(normalizedName, { force: true });
+      cy.wait(2000);
+
+      // Click search icon
+      peoplepom.click_searchIcon().click({ force: true });
+      cy.wait(3000);
+
+      // Check the result
+      cy.get("body").then(($body) => {
+        if ($body.text().includes("No More Record Found")) {
+          // Assert no record message is displayed
+          cy.contains("No More Record Found").should("be.visible");
+          cy.log("No More Record Found");
+          results.push({
+            name: normalizedName,
+            status: "No More Record Found",
+          });
+        } else {
+          // Assert the displayed name matches the normalized input
+          peoplepom
+            .verify_People_Name()
+            .invoke("text")
+            .then((displayedName) => {
+              const displayedNameTrimmed = displayedName
+                .replace(/\s+/g, " ")
+                .trim();
+              expect(displayedNameTrimmed).to.include(normalizedName);
+              cy.log("Expected name = ", displayedNameTrimmed);
+              cy.log("Display on site = ", normalizedName);
+            });
+        }
+      });
+
+      // Clear the search field before the next iteration
+      peoplepom.set_searchField().clear();
+    });
+  });
+
+  it("TC009 ==> ");
 });

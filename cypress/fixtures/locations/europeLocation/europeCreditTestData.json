@@ -1,0 +1,25 @@
+{
+  "dublinLoctionDetails": {
+    "locationName": "Dublin",
+    "address": "45 Mespil Road Dublin 4 Ireland",
+    "mainNum": "+353-19019800",
+    "faxNum": "+353-16335380"
+  },
+  "lisbonLoctionDetails": {
+    "locationName": "Lisbon",
+    "address": "Av. da Liberdade 245 4C Office 414 Lisbon 1250-143 Portugal",
+    "mainNum": "",
+    "faxNum": ""
+  },
+  "londonLoctionDetails": {
+    "locationName": "London",
+    "address": "Devonshire House Mayfair Place London W1J 8AJ United Kingdom",
+    "mainNum": "+44 20 7514 5252",
+    "faxNum": "+44 20 7514 5250"
+  },
+  "madridLoctionDetails": {
+    "address": "Calle de Serrano n°38 1st Floor Madrid 28001 Spain",
+    "mainNum": "",
+    "faxNum": ""
+  }
+}

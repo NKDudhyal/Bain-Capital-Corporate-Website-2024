@@ -1,0 +1,38 @@
+{
+    "guangzhouLocationDetails": {
+      "locationName": "Guangzhou",
+      "address": "6 Zhujiang Dong Road Guangzhou Tianhe District 510620 China",
+      "mainNum": "",
+      "faxNum": ""
+    },
+    "hongKongLocationDetails": {
+      "locationName": "Hong Kong",
+      "address": "Suite 2501, Level 25 One Pacific Place 88 Queensway Admiralty Hong Kong",
+      "mainNum": "+852-36566800",
+      "faxNum": "+852-36566801"
+    },
+    "melbourneLocationDetails": {
+      "locationName": "Melbourne",
+      "address": "Level 20, 101 Collins Street Melbourne VIC 3000 Australia",
+      "mainNum": "+61-3-8102-8600",
+      "faxNum": "+61-3-9014-6930"
+    },
+    "seoulLocationDetails": {
+      "locationName": "Seoul",
+      "address": "28F, Parnas Tower 521, Teheran-ro, Gangnam-gu Seoul 06164 Korea, Republic of",
+      "mainNum": "+82 2 6940 2300",
+      "faxNum": "+82 2 6322 9822"
+    },
+    "singaporeLocationDetails": {
+      "address": "88 Market Street, #40-01 CapitaSpring Singapore 048948 Singapore",
+      "mainNum": "+65 6016 1030",
+      "faxNum": ""
+    },
+    "sydneyLocationDetails": {
+      "locationName": "Sydney",
+      "address": "Level 28 88 Phillip Street Sydney NSW 2000 Australia",
+      "mainNum": "+61-2-9093-5500",
+      "faxNum": ""
+    }
+  }
+  
