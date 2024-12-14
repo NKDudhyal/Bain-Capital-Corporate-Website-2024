@@ -164,7 +164,7 @@ describe("News page Tests", () => {
     cy.wait(3000);
 
     newsPom
-      .select_Year_Option_From_Dropdown(randomExistYearNews)
+      .select_Year_Option_From_DWropdown(randomExistYearNews)
       .click({ force: true });
 
     newsPom.inTheNews_btn().click({ force: true });

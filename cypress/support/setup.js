@@ -51,6 +51,11 @@ let americasTechOp;
 let americasVentures;
 let americasCrypto;
 
+let asiaAll;
+let asiaSpecialSitu;
+let asiaCredit;
+let asiaPrivateEquity;
+
 export function setupEnvironment() {
   beforeEach("Setup Test Environment", function () {
     cy.viewport("macbook-15");
@@ -129,7 +134,7 @@ export function setupEnvironment() {
     ).then((data) => {
       americasSpecialSitu = data;
     });
-    /***** */
+    
     cy.fixture("locations/americasLocation/americasTechOppTestData.json").then(
       (data) => {
         americasTechOp = data;
@@ -147,7 +152,30 @@ export function setupEnvironment() {
         americasCrypto = data;
       }
     );
-    /***** */
+    /******************************************************************************************
+     * ******************************************************************************
+     */
+            //
+    cy.fixture("locations/asiaPacificLocation/asiaAllTestData.json").then(
+      (data) => {
+        asiaAll = data;
+      }
+    );
+    cy.fixture("locations/asiaPacificLocation/asiaCreditTestData.json").then(
+      (data) => {
+        asiaCredit = data;
+      }
+    );
+    cy.fixture("locations/asiaPacificLocation/asiaSpecialSituationTestData.json").then(
+      (data) => {
+        asiaSpecialSitu = data;
+      }
+    );
+    cy.fixture("locations/asiaPacificLocation/asiaPrivateEquityTestData.json").then(
+      (data) => {
+        asiaPrivateEquity = data;
+      }
+    );
 
     random_peopleNames =
       peopletestdata.peopleNames[
@@ -266,4 +294,8 @@ export {
   americasTechOp,
   americasVentures,
   americasCrypto,
+  asiaAll,
+  asiaSpecialSitu,
+  asiaCredit,
+  asiaPrivateEquity,
 };

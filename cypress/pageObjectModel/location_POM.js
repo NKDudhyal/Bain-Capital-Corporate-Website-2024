@@ -74,6 +74,14 @@ class location_pageObjetModel {
   getAddressPara(){
     return cy.get(".business-address p")
   }
+
+  singleNewYorkName(){
+    return cy.get("div[id='americas'] aside:nth-child(1) div:nth-child(1) h4:nth-child(1)")
+  }
+
+  singleNewYorkAddress(){
+    return cy.get("body > main:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > section:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > article:nth-child(1) > aside:nth-child(3) > div:nth-child(1) > div:nth-child(2) > p:nth-child(1)")
+  }
 }
 
 export default location_pageObjetModel;
