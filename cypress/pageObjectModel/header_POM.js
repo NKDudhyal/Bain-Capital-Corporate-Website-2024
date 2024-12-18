@@ -1,4 +1,8 @@
 class header_pageObjectModel {
+  moreMenu() {
+    return cy.get("#more_menu_popup").invoke('removeAttr','target')
+  }
+  
   news_lnk() {
     return cy.get("#navbarDropdown6");
   }

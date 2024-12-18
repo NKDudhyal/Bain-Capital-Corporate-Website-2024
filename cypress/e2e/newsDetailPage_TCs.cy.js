@@ -15,7 +15,7 @@ import {
 describe("News Detail Page Tests", function () {
   setupEnvironment();
 
-  it.only("TC001 ==> Verify news type in breadcrumb matches the selected news type.", function () {
+  it("TC001 ==> Verify news type in breadcrumb matches the selected news type.", function () {
     headerPom.news_lnk({timeout:5000}).click({force:true})
     // Select a random business news type and click it
     newsPom
@@ -24,7 +24,7 @@ describe("News Detail Page Tests", function () {
     // Click the "Press Releases" button
     newsPom.press_Releases_btn({timeout:5000}).click({ force: true });
     // Capture the first tag text and verify breadcrumb text matches
-    cy.wait(3000)
+    
     cy.get(".tag-text",)
       .first()
       .invoke("text")
@@ -66,19 +66,19 @@ describe("News Detail Page Tests", function () {
 
   it("TC002 ==> Verify business option in breadcrumb matches the selected news.", function () {
     headerPom.news_lnk().click({force:true})
-    cy.wait(1000);
+   
     // Open the business dropdown
-    cy.wait(2000);
+ 
     newsPom.busniess_Dropdown().click({ force: true });
-    cy.wait(2000);
+ 
     // Select a random business news type and click it
     newsPom
       .select_Busniess_Option_From_Dropdown(randomExistBusinessNews)
       .click({ force: true });
-    cy.wait(2000);
+ 
     // Click the "Press Releases" button
     newsPom.press_Releases_btn().click({ force: true });
-    cy.wait(2000);
+ 
     // Capture the first business option text and verify breadcrumb matches
     newsPom
       .get_Business_Tags_From_List()
@@ -121,20 +121,20 @@ describe("News Detail Page Tests", function () {
       });
   });
 
-  it.only("TC003 ==> Verify year option in breadcrumb matches the selected news.", function () {
+  it("TC003 ==> Verify year option in breadcrumb matches the selected news.", function () {
     headerPom.news_lnk().click({force:true})
-    cy.wait(5000);
+    
     // Open the business dropdown
     newsPom.busniess_Dropdown().click({ force: true });
-    cy.wait(5000);
+    
     // Select a random business news type and click it
     newsPom
       .select_Busniess_Option_From_Dropdown(randomExistBusinessNews)
       .click({ force: true });
-      cy.wait(5000);
+      
     // Click the "Press Releases" button
     newsPom.press_Releases_btn().click({ force: true });
-    cy.wait(5000);
+    
     // Capture the news date text and verify breadcrumb matches
     newsPom
       .get_Year_Values_From_List()
@@ -179,7 +179,7 @@ describe("News Detail Page Tests", function () {
 
   it("TC004 ==> Verify breadcrumb functionality works properly.", function () {
     headerPom.news_lnk().click({force:true})
-    cy.wait(1000);
+   
     // Open the business dropdown
     newsPom.busniess_Dropdown().click({ force: true });
 
@@ -190,7 +190,7 @@ describe("News Detail Page Tests", function () {
 
     // Click the "Press Releases" button
     newsPom.press_Releases_btn().click({ force: true });
-    cy.wait(2000);
+ 
     // Navigate to news detail page and validate breadcrumb navigation
     newsPom
       .get_Year_Values_From_List()
@@ -214,7 +214,7 @@ describe("News Detail Page Tests", function () {
               .click({ force: true });
 
             // Wait for the page to load
-            cy.wait(5000);
+            
 
             // Navigate back to the news list using breadcrumb link
             newsdetialPom.clickOnNewsBreadcrumb().click({ force: true });

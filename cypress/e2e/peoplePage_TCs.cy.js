@@ -157,7 +157,7 @@ describe("People Page Tests", function () {
       .should("eq", random_peopleNames);
   });
 
-  it.only("TC008 ==> Verify search functionality for multiple names", function () {
+  it.only("TC009 ==> Verify search functionality for multiple names", function () {
     headerPom.people_lnk().click({ force: true });
     cy.wait(2000);
     // Array to hold results

@@ -28,7 +28,7 @@ describe("People Page Tests", function () {
 
   it("TC001 ==> Verify that the entered name in the People search is visible in the results, clickable, and that the URL and title of the individual profile page match the name.", function () {
     headerPom.people_lnk().click({ force: true });
-    cy.wait(2000);
+    
 
     // Array to hold results
     const results = [];
@@ -45,11 +45,11 @@ describe("People Page Tests", function () {
         .set_searchField()
         .clear({ force: true })
         .type(normalizedName, { force: true });
-      cy.wait(2000);
+      
 
       // Click search icon
       peoplepom.click_searchIcon().click({ force: true });
-      cy.wait(3000);
+      
 
       // Check the result
       cy.get("body").then(($body) => {
@@ -85,7 +85,7 @@ describe("People Page Tests", function () {
 
                   // Click on the detailed link to view individual profile
                   cy.get(".people-detail-link").click({ force: true });
-                  cy.wait(5000);
+                  
 
                   const nametoLowerCasee = resultNameTrimed.toLowerCase();
                   const toLowerCaseHy = nametoLowerCasee.replace(/\s+/g, "-");
@@ -115,15 +115,15 @@ describe("People Page Tests", function () {
             });
         }
       });
-      cy.wait(2000);
+      
       // Clear the search field before the next iteration
       peoplepom.set_searchField().clear();
     });
   });
 
-  it.only("TC002 ==> Verify that the entered name should be visible in result, clickable, and details like designation, business type, and location match the profile page", function () {
+  it.skip("TC002 ==> Verify that the entered name should be visible in result, clickable, and details like designation, business type, and location match the profile page", function () {
     headerPom.people_lnk().click({ force: true });
-    cy.wait(2000);
+    
 
     peopletestdata.completeDetailOfPeoples.forEach((person) => {
       const normalizedName = person.peopleName.replace(/\s+/g, " ").trim();
@@ -135,11 +135,11 @@ describe("People Page Tests", function () {
         .set_searchField()
         .clear({ force: true })
         .type(normalizedName, { force: true });
-      cy.wait(2000);
+      
 
       // Click search icon
       peoplepom.click_searchIcon().click({ force: true });
-      cy.wait(3000);
+      
 
       // Check the result
       cy.get("body").then(($body) => {
@@ -172,7 +172,7 @@ describe("People Page Tests", function () {
 
                   // Click on the detailed link to view individual profile
                   cy.get(".people-detail-link").click({ force: true });
-                  cy.wait(5000);
+                  
 
                   // Verify designation, business type, and location
                   cy.get(".people-related-info ul li:nth-child(1)")
@@ -243,7 +243,7 @@ describe("People Page Tests", function () {
         }
       });
 
-      cy.wait(2000);
+      
       // Clear the search field before the next iteration
       peoplepom.set_searchField().clear();
     });

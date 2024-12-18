@@ -18,17 +18,14 @@ describe("News page Tests", () => {
     const actualBusniessName = randomBusniessOption;
 
     headerPom.news_lnk().click();
-    cy.wait(1000);
 
     newsPom.busniess_Dropdown().click({ force: true });
-    cy.wait(3000);
 
     newsPom
       .select_Busniess_Option_From_Dropdown(randomBusniessOption)
       .click({ force: true });
 
     newsPom.press_Releases_btn().click({ force: true });
-    cy.wait(3000);
 
     cy.scrollToLastNews(newsPom);
 
@@ -42,17 +39,14 @@ describe("News page Tests", () => {
     const actualYearText = randomYearOption;
 
     headerPom.news_lnk().click({ force: true });
-    cy.wait(1000);
 
     newsPom.year_Dropdown().click({ force: true });
-    cy.wait(3000);
 
     newsPom
       .select_Year_Option_From_Dropdown(randomYearOption)
       .click({ force: true });
 
     newsPom.press_Releases_btn().click({ force: true });
-    cy.wait(3000);
 
     cy.scrollToLastNews(newsPom);
 
@@ -63,18 +57,15 @@ describe("News page Tests", () => {
     const actualNewsType = "PRESS RELEASES";
 
     headerPom.news_lnk().click({ force: true });
-    cy.wait(1000);
 
     newsPom.busniess_Dropdown().click({ force: true });
-    cy.wait(3000);
 
     newsPom
       .select_Busniess_Option_From_Dropdown(randomBusniessOption)
       .click({ force: true });
-
     cy.wait(2000);
     newsPom.press_Releases_btn().click({ force: true });
-
+    cy.wait(2000);
     cy.scrollToLastNews(newsPom);
 
     cy.verifyTagsIncludeType(
@@ -86,10 +77,8 @@ describe("News page Tests", () => {
   it("TC004 ==> Verify that In The News functionality works and should reflects in listing properly.", () => {
     let actualNewsType = "IN THE NEWS";
     headerPom.news_lnk().click({ force: true });
-    cy.wait(1000);
 
     newsPom.busniess_Dropdown().click({ force: true });
-    cy.wait(3000);
 
     newsPom
       .select_Busniess_Option_From_Dropdown(randomExistBusinessNews)
@@ -102,7 +91,7 @@ describe("News page Tests", () => {
       .click({ force: true });
 
     newsPom.inTheNews_btn().click({ force: true });
-    cy.wait(2000);
+
     cy.scrollToLastNews(newsPom);
   });
 
@@ -112,23 +101,21 @@ describe("News page Tests", () => {
     const actualYearText = randomExistYearNews;
 
     headerPom.news_lnk().click({ force: true });
-    cy.wait(1000);
 
     newsPom.busniess_Dropdown().click({ force: true });
-    cy.wait(3000);
+
     newsPom
       .select_Busniess_Option_From_Dropdown(randomExistBusinessNews)
       .click({ force: true });
 
     newsPom.year_Dropdown().click({ force: true });
-    cy.wait(3000);
 
     newsPom
       .select_Year_Option_From_Dropdown(randomExistYearNews)
       .click({ force: true });
 
     newsPom.press_Releases_btn().click({ force: true });
-    cy.wait(2000);
+
     cy.scrollToLastNews(newsPom);
 
     // Verify press release tag
@@ -146,29 +133,26 @@ describe("News page Tests", () => {
     cy.verifyYearTags(newsPom.get_Year_Tags_From_List, actualYearText);
   });
 
-  it.only("TC006 ==> Verify that after selecting business, year option and In the news type then selected options should be visible in listing properly.", () => {
+  it("TC006 ==> Verify that after selecting business, year option and In the news type then selected options should be visible in listing properly.", () => {
     const actualNewsType = "IN THE NEWS";
     const actualBusniessName = randomExistBusinessNews;
     const actualYearText = randomExistYearNews;
 
     headerPom.news_lnk().click({ force: true });
-    cy.wait(1000);
 
     newsPom.busniess_Dropdown().click({ force: true });
-    cy.wait(3000);
+
     newsPom
       .select_Busniess_Option_From_Dropdown(randomExistBusinessNews)
       .click({ force: true });
 
     newsPom.year_Dropdown().click({ force: true });
-    cy.wait(3000);
 
     newsPom
-      .select_Year_Option_From_DWropdown(randomExistYearNews)
+      .select_Year_Option_From_Dropdown(randomExistYearNews)
       .click({ force: true });
 
     newsPom.inTheNews_btn().click({ force: true });
-    cy.wait(3000);
 
     cy.scrollToLastNews(newsPom);
 
@@ -189,10 +173,8 @@ describe("News page Tests", () => {
 
   it("TC007 ==> Verify that after selecting options, if no news is found, a 'No News Found' message is displayed properly.", () => {
     headerPom.news_lnk().click({ force: true });
-    cy.wait(1000);
 
     newsPom.busniess_Dropdown().click({ force: true });
-    cy.wait(3000);
 
     newsPom
       .select_Busniess_Option_From_Dropdown(randomNotExistBusiness)
@@ -209,21 +191,18 @@ describe("News page Tests", () => {
     newsPom.verify_News_Type_List_Not_Empty_Or_Show_Message();
   });
 
-  it("TC008 ==> Verify that featured news functionality works properly.", () => {
+  it.only("TC008 ==> Verify that featured news functionality works properly.", () => {
     headerPom.news_lnk().click({ force: true });
-    cy.wait(5000);
-
+    cy.wait(2000)
     newsPom.feature_Image_Lnk().click({ force: true });
-    cy.wait(5000);
-    cy.url().should(
-      "include",
-      "/bain-capital-closes-global-special-situations-fund"
-    );
-
+    cy.wait(2000)
+    cy.url().then((currentUrl) => {
+      expect(currentUrl).to.include("/bain-capital-closes-global-special-situations-fund");
+    });
     cy.go("back");
 
-    cy.wait(5000);
-
-    cy.url().should("eq", "https://www.baincapital.com/news");
+    cy.url().then((currentUrl) => {
+      expect(currentUrl).to.eq("https://www.baincapital.com/news");
+    });
   });
 });

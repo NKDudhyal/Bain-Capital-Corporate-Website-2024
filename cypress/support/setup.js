@@ -8,6 +8,7 @@ import newsDetail_pageObjectModel from "../pageObjectModel/newsDetail_POM";
 import header_pageObjectModel from "../pageObjectModel/header_POM";
 import people_pageObjectModel from "../pageObjectModel/people_POM";
 import location_pageObjetModel from "../pageObjectModel/location_POM";
+import home_pageObjectModel from "../pageObjectModel/home_POM";
 
 import * as newstestData from "../fixtures/newsTestData.json";
 import * as peopletestdata from "../fixtures/peopleTestData.json";
@@ -20,6 +21,7 @@ let newsPom;
 let newsdetialPom;
 let peoplepom;
 let locationPom;
+let homepom;
 
 let randomBusniessOption;
 let randomYearOption;
@@ -56,6 +58,8 @@ let asiaSpecialSitu;
 let asiaCredit;
 let asiaPrivateEquity;
 
+let businessUrls;
+
 export function setupEnvironment() {
   beforeEach("Setup Test Environment", function () {
     cy.viewport("macbook-15");
@@ -67,12 +71,17 @@ export function setupEnvironment() {
     newsdetialPom = new newsDetail_pageObjectModel();
     peoplepom = new people_pageObjectModel();
     locationPom = new location_pageObjetModel();
+    homepom = new home_pageObjectModel();
 
     Cypress.on("uncaught:exception", (err) => {
       if (err.message.includes("ResizeObserver loop completed")) {
         return false;
       }
       return false;
+    });
+
+    cy.fixture("businessURL.json").then((data) => {
+      businessUrls = data;
     });
 
     cy.fixture("locations/americasLocation/americasAllTestData.json").then(
@@ -261,6 +270,7 @@ export function setupEnvironment() {
 export {
   cookiePom,
   newsPom,
+  homepom,
   newsdetialPom,
   randomBusniessOption,
   randomYearOption,
@@ -298,4 +308,5 @@ export {
   asiaSpecialSitu,
   asiaCredit,
   asiaPrivateEquity,
+  businessUrls
 };

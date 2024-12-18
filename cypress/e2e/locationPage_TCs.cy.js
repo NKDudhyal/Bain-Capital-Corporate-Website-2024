@@ -21,20 +21,20 @@ import {
   asiaPrivateEquity,
 } from "../support/setup";
 
-describe("", function () {
+describe("Location Page test Cases", function () {
   setupEnvironment();
   it("TC001 ==> Verify that location functionality works properly and url should proper.", function () {
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     cy.url().should("eq", "https://www.baincapital.com/locations");
   });
 
   it("TC002 ==> Verify that Americas tab functionality works and verifies location name and address visibility for all types of businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasAll), (key) => {
@@ -91,20 +91,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC003 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Credit businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationCreditOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasCredit), (key) => {
       const locationDetails = americasCredit[key];
@@ -160,20 +160,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC004 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Double Impact businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationDoubleImpactOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasDoubleImpact), (key) => {
       const locationDetails = americasDoubleImpact[key];
@@ -229,20 +229,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC005 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Insurance businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationInsuranceOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasInsurance), (key) => {
       const locationDetails = americasInsurance[key];
@@ -298,20 +298,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC006 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Life Sci businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationLifeSciOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasLifeSci), (key) => {
       const locationDetails = americasLifeSci[key];
@@ -367,7 +367,7 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
@@ -379,13 +379,13 @@ describe("", function () {
   it("TC007 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Partnership businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationPartnershipStaOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasPartnesShip), (key) => {
       const locationDetails = americasPartnesShip[key];
@@ -441,20 +441,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC008 ==> Verify that Americas tab functionality works and verifies location name and address visibility for private Equity businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationPrivateEqOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasPrivateEquity), (key) => {
       const locationDetails = americasPrivateEquity[key];
@@ -510,20 +510,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC009 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Public Equity businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationPublicEqOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasPublicEquity), (key) => {
       const locationDetails = americasPublicEquity[key];
@@ -579,20 +579,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC010 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Real Estate businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationRealEstateOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasRealEstate), (key) => {
       const locationDetails = americasRealEstate[key];
@@ -648,20 +648,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC011 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Special Situation businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationSpecialSituationOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasSpecialSitu), (key) => {
       const locationDetails = americasSpecialSitu[key];
@@ -717,20 +717,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC012 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Tech Opp businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationTechOpOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasTechOp), (key) => {
       const locationDetails = americasTechOp[key];
@@ -786,20 +786,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC013 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Ventures businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationVenturesOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasVentures), (key) => {
       const locationDetails = americasVentures[key];
@@ -855,20 +855,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC0014 ==> Verify that Americas tab functionality works and verifies location name and address visibility for Crypto businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.americasTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationCryptoOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(americasCrypto), (key) => {
       const locationDetails = americasCrypto[key];
@@ -924,7 +924,7 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
@@ -937,11 +937,11 @@ describe("", function () {
   it("TC0015 ==> Verify that Asia Pacific tab functionality works and verifies location name and address visibility for All businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.asiaPacificTab().click({ force: true });
-    cy.wait(3000);
+    
   
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(asiaAll), (key) => {
       const locationDetails = asiaAll[key];
@@ -997,20 +997,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC0016 ==> Verify that Asia Pacific tab functionality works and verifies location name and address visibility for Special Situation businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.asiaPacificTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationSpecialSituationOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(asiaSpecialSitu), (key) => {
       const locationDetails = asiaSpecialSitu[key];
@@ -1066,20 +1066,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC0017 ==> Verify that Asia Pacific tab functionality works and verifies location name and address visibility for Credit businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.asiaPacificTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationCreditOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(asiaCredit), (key) => {
       const locationDetails = asiaCredit[key];
@@ -1135,20 +1135,20 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 
   it("TC0018 ==> Verify that Asia Pacific tab functionality works and verifies location name and address visibility for Private Equity businesses.", function () {
     // Navigate to the Americas tab
     headerPom.location_lnk().click({ force: true });
-    cy.wait(3000);
+    
     locationPom.asiaPacificTab().click({ force: true });
-    cy.wait(3000);
+    
 
     locationPom.location_Buniess().click({ force: true });
     locationPom.locationPrivateEqOption();
-    cy.wait(3000);
+    
     // Iterate over each location in the JSON file
     Cypress._.each(Object.keys(asiaPrivateEquity), (key) => {
       const locationDetails = asiaPrivateEquity[key];
@@ -1204,7 +1204,7 @@ describe("", function () {
           cy.log(`Error validating location: ${locationName}`, error.message);
         }
       });
-      cy.wait(2500);
+      
     });
   });
 });

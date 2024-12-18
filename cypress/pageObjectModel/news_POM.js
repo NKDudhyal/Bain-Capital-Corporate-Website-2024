@@ -113,7 +113,7 @@ class news_pageObjectModel {
   /****************************************************************************************** */
 
   get_The_List_All_News(){
-    return cy.get("#news-listing-wrap .news-title a")
+    return cy.get("#news-listing-wrap .news-title")
   }
 
   get_Year_Tags_From_List(){
