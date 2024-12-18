@@ -8,7 +8,8 @@ import newsDetail_pageObjectModel from "../pageObjectModel/newsDetail_POM";
 import header_pageObjectModel from "../pageObjectModel/header_POM";
 import people_pageObjectModel from "../pageObjectModel/people_POM";
 import location_pageObjetModel from "../pageObjectModel/location_POM";
-import home_pageObjectModel from "../pageObjectModel/home_POM";
+
+import moreMenu_PageObject_Model from "../pageObjectModel/moreMenu_POM";
 
 import * as newstestData from "../fixtures/newsTestData.json";
 import * as peopletestdata from "../fixtures/peopleTestData.json";
@@ -22,6 +23,7 @@ let newsdetialPom;
 let peoplepom;
 let locationPom;
 let homepom;
+let moremenupom;
 
 let randomBusniessOption;
 let randomYearOption;
@@ -72,7 +74,7 @@ export function setupEnvironment() {
     peoplepom = new people_pageObjectModel();
     locationPom = new location_pageObjetModel();
     homepom = new home_pageObjectModel();
-
+    moremenupom = new moreMenu_PageObject_Model();
     Cypress.on("uncaught:exception", (err) => {
       if (err.message.includes("ResizeObserver loop completed")) {
         return false;
@@ -308,5 +310,6 @@ export {
   asiaSpecialSitu,
   asiaCredit,
   asiaPrivateEquity,
-  businessUrls
+  businessUrls,
+  moremenupom,
 };
