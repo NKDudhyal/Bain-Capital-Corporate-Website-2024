@@ -2,7 +2,7 @@ import {
   setupEnvironment,
   cookiePom,
   newsPom,
-  newsdetialPom,
+  newsDetialPom,
   randomBusniessOption,
   randomYearOption,
   randomExistBusinessNews,
@@ -11,7 +11,7 @@ import {
   randomNotExistBusiness,
   randomNotExistYear,
   headerPom,
-  peoplepom,
+  peoplePom,
   randomPeopleLocation,
   titleSelection,
   randomPeopleBusniess,
@@ -41,14 +41,14 @@ describe("People Page Tests", function () {
       cy.log(`Processing normalized name: ${normalizedName}`);
 
       // Enter the normalized name into the search field
-      peoplepom
+      peoplePom
         .set_searchField()
         .clear({ force: true })
         .type(normalizedName, { force: true });
       
 
       // Click search icon
-      peoplepom.click_searchIcon().click({ force: true });
+      peoplePom.click_searchIcon().click({ force: true });
       
 
       // Check the result
@@ -63,7 +63,7 @@ describe("People Page Tests", function () {
           });
         } else {
           // Assert the displayed name matches the normalized input
-          peoplepom
+          peoplePom
             .verify_People_Name()
             .invoke("text")
             .then((displayedName) => {
@@ -117,7 +117,7 @@ describe("People Page Tests", function () {
       });
       
       // Clear the search field before the next iteration
-      peoplepom.set_searchField().clear();
+      peoplePom.set_searchField().clear();
     });
   });
 
@@ -131,14 +131,14 @@ describe("People Page Tests", function () {
       cy.log(`Searching for: ${normalizedName}`);
 
       // Enter the normalized name into the search field
-      peoplepom
+      peoplePom
         .set_searchField()
         .clear({ force: true })
         .type(normalizedName, { force: true });
       
 
       // Click search icon
-      peoplepom.click_searchIcon().click({ force: true });
+      peoplePom.click_searchIcon().click({ force: true });
       
 
       // Check the result
@@ -149,7 +149,7 @@ describe("People Page Tests", function () {
           cy.log("No More Record Found");
         } else {
           // Assert the displayed name matches the normalized input
-          peoplepom
+          peoplePom
             .verify_People_Name()
             .invoke("text")
             .then((displayedName) => {
@@ -245,7 +245,7 @@ describe("People Page Tests", function () {
 
       
       // Clear the search field before the next iteration
-      peoplepom.set_searchField().clear();
+      peoplePom.set_searchField().clear();
     });
   });
 });

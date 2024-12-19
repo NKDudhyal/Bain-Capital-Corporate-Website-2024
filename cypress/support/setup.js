@@ -2,28 +2,21 @@
 /// <reference types="cypress-xpath" />
 
 // Import Page Object Model classes and test data
-import cookie_pageObjectModel from "../pageObjectModel/cookies_POM";
-import news_pageObjectModel from "../pageObjectModel/news_POM";
-import newsDetail_pageObjectModel from "../pageObjectModel/newsDetail_POM";
-import header_pageObjectModel from "../pageObjectModel/header_POM";
-import people_pageObjectModel from "../pageObjectModel/people_POM";
-import location_pageObjetModel from "../pageObjectModel/location_POM";
+import CookiePOM from "../pageObjectModel/cookies_POM";
+import NewsPOM from "../pageObjectModel/news_POM";
+import NewsDetailPOM from "../pageObjectModel/newsDetail_POM";
+import HeaderPom from "../pageObjectModel/header_POM";
+import PeoplePom from "../pageObjectModel/people_POM";
+import LocationPOM from "../pageObjectModel/location_POM";
+import MoreMenuPom from "../pageObjectModel/moreMenu_POM";
+import HomePom from "../pageObjectModel/home_POM"
 
-import moreMenu_PageObject_Model from "../pageObjectModel/moreMenu_POM";
-
-import * as newstestData from "../fixtures/newsTestData.json";
-import * as peopletestdata from "../fixtures/peopleTestData.json";
+import * as NewsTestData from "../fixtures/newsTestData.json";
+import * as PeopleTestData from "../fixtures/peopleTestData.json";
 
 //const getRandomItem = (array) => array[Math.floor(Math.random() * array.length)];
 
-let headerPom;
-let cookiePom;
-let newsPom;
-let newsdetialPom;
-let peoplepom;
-let locationPom;
-let homepom;
-let moremenupom;
+let headerPom, cookiePom, newsPom, newsDetialPom, peoplePom, locationPom, homePom, moreMenuPom;
 
 let randomBusniessOption;
 let randomYearOption;
@@ -67,14 +60,14 @@ export function setupEnvironment() {
     cy.viewport("macbook-15");
     cy.visit("https://www.baincapital.com");
 
-    headerPom = new header_pageObjectModel();
-    cookiePom = new cookie_pageObjectModel();
-    newsPom = new news_pageObjectModel();
-    newsdetialPom = new newsDetail_pageObjectModel();
-    peoplepom = new people_pageObjectModel();
-    locationPom = new location_pageObjetModel();
-    homepom = new home_pageObjectModel();
-    moremenupom = new moreMenu_PageObject_Model();
+    headerPom = new HeaderPom();
+    cookiePom = new CookiePOM();
+    newsPom = new NewsPOM();
+    newsDetialPom = new NewsDetailPOM();
+    peoplePom = new PeoplePom();
+    locationPom = new LocationPOM();
+    moreMenuPom = new MoreMenuPom();
+    homePom = new HomePom()
     Cypress.on("uncaught:exception", (err) => {
       if (err.message.includes("ResizeObserver loop completed")) {
         return false;
@@ -189,75 +182,75 @@ export function setupEnvironment() {
     );
 
     random_peopleNames =
-      peopletestdata.peopleNames[
-        Math.floor(Math.random() * peopletestdata.peopleNames.length)
+      PeopleTestData.peopleNames[
+        Math.floor(Math.random() * PeopleTestData.peopleNames.length)
       ];
 
     random_people_PrivateEquityFocus =
-      peopletestdata.people_PrivateEquityFocus[
+      PeopleTestData.people_PrivateEquityFocus[
         Math.floor(
-          Math.random() * peopletestdata.people_PrivateEquityFocus.length
+          Math.random() * PeopleTestData.people_PrivateEquityFocus.length
         )
       ];
 
     random_people_CreditFocus =
-      peopletestdata.people_CreditFocus[
-        Math.floor(Math.random() * peopletestdata.people_CreditFocus.length)
+      PeopleTestData.people_CreditFocus[
+        Math.floor(Math.random() * PeopleTestData.people_CreditFocus.length)
       ];
 
     random_people_VenturesFocus =
-      peopletestdata.people_VenturesFocus[
-        Math.floor(Math.random() * peopletestdata.people_VenturesFocus.length)
+      PeopleTestData.people_VenturesFocus[
+        Math.floor(Math.random() * PeopleTestData.people_VenturesFocus.length)
       ];
 
     randomPeopleBusniess =
-      peopletestdata.peopleBusiness[
-        Math.floor(Math.random() * peopletestdata.peopleBusiness.length)
+      PeopleTestData.peopleBusiness[
+        Math.floor(Math.random() * PeopleTestData.peopleBusiness.length)
       ];
 
     titleSelection =
-      peopletestdata.title[
-        Math.floor(Math.random() * peopletestdata.title.length)
+      PeopleTestData.title[
+        Math.floor(Math.random() * PeopleTestData.title.length)
       ];
 
     randomPeopleLocation =
-      peopletestdata.peopleLocations[
-        Math.floor(Math.random() * peopletestdata.peopleLocations.length)
+      PeopleTestData.peopleLocations[
+        Math.floor(Math.random() * PeopleTestData.peopleLocations.length)
       ];
 
     randomNotExistYear =
-      newstestData.notExistYear[
-        Math.floor(Math.random() * newstestData.notExistYear.length)
+      NewsTestData.notExistYear[
+        Math.floor(Math.random() * NewsTestData.notExistYear.length)
       ];
 
     randomNotExistBusiness =
-      newstestData.notExistBuniessNews[
-        Math.floor(Math.random() * newstestData.notExistBuniessNews.length)
+      NewsTestData.notExistBuniessNews[
+        Math.floor(Math.random() * NewsTestData.notExistBuniessNews.length)
       ];
 
     randomNewsTypes =
-      newstestData.newsTypes[
-        Math.floor(Math.random() * newstestData.newsTypes.length)
+      NewsTestData.newsTypes[
+        Math.floor(Math.random() * NewsTestData.newsTypes.length)
       ];
 
     randomExistYearNews =
-      newstestData.existYearNews[
-        Math.floor(Math.random() * newstestData.existYearNews.length)
+      NewsTestData.existYearNews[
+        Math.floor(Math.random() * NewsTestData.existYearNews.length)
       ];
 
     randomExistBusinessNews =
-      newstestData.existBusinessNews[
-        Math.floor(Math.random() * newstestData.existBusinessNews.length)
+      NewsTestData.existBusinessNews[
+        Math.floor(Math.random() * NewsTestData.existBusinessNews.length)
       ];
 
     randomBusniessOption =
-      newstestData.businessOption[
-        Math.floor(Math.random() * newstestData.businessOption.length)
+      NewsTestData.businessOption[
+        Math.floor(Math.random() * NewsTestData.businessOption.length)
       ];
 
     randomYearOption =
-      newstestData.yearOption[
-        Math.floor(Math.random() * newstestData.yearOption.length)
+      NewsTestData.yearOption[
+        Math.floor(Math.random() * NewsTestData.yearOption.length)
       ];
 
     cookiePom.continueBtn({ timeout: 5000 }).click();
@@ -272,8 +265,13 @@ export function setupEnvironment() {
 export {
   cookiePom,
   newsPom,
-  homepom,
-  newsdetialPom,
+  homePom,
+  newsDetialPom,
+  moreMenuPom,
+  headerPom,
+  peoplePom,
+  locationPom,
+
   randomBusniessOption,
   randomYearOption,
   randomExistBusinessNews,
@@ -281,8 +279,6 @@ export {
   randomNewsTypes,
   randomNotExistBusiness,
   randomNotExistYear,
-  headerPom,
-  peoplepom,
   randomPeopleLocation,
   titleSelection,
   randomPeopleBusniess,
@@ -290,9 +286,9 @@ export {
   random_people_CreditFocus,
   random_people_PrivateEquityFocus,
   random_allpeopleNames,
-  peopletestdata,
+  PeopleTestData,
   random_peopleNames,
-  locationPom,
+
   americasAll,
   americasCredit,
   americasDoubleImpact,
@@ -311,5 +307,4 @@ export {
   asiaCredit,
   asiaPrivateEquity,
   businessUrls,
-  moremenupom,
 };

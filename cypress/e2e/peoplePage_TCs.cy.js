@@ -1,7 +1,7 @@
 import {
   setupEnvironment,
   headerPom,
-  peoplepom,
+  peoplePom,
   randomPeopleLocation,
   titleSelection,
   randomPeopleBusniess,
@@ -19,31 +19,31 @@ describe("People Page Tests", function () {
     headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
-    peoplepom.peopleLocation_Dropdown_btn().click({ force: true });
-    peoplepom
+    peoplePom.peopleLocation_Dropdown_btn().click({ force: true });
+    peoplePom
       .select_People_Location_Option(randomPeopleLocation)
       .click({ force: true });
-    peoplepom.verify_Selected_Location_Option_Visible(randomPeopleLocation);
+    peoplePom.verify_Selected_Location_Option_Visible(randomPeopleLocation);
   });
 
   it("TC002 ==> Verfiy that title dropdown work properly.", function () {
     headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
-    peoplepom.peopleTitle_Dropdown_btn().click({ force: true });
-    peoplepom.select_People_Title_Option(titleSelection).click({ force: true });
-    peoplepom.verify_Selected_People_Title_Option_Visible(titleSelection);
+    peoplePom.peopleTitle_Dropdown_btn().click({ force: true });
+    peoplePom.select_People_Title_Option(titleSelection).click({ force: true });
+    peoplePom.verify_Selected_People_Title_Option_Visible(titleSelection);
   });
 
   it("TC003 ==> Verfiy that business dropdown work properly.", function () {
     headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
-    peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
-    peoplepom
+    peoplePom.peopleBusiness_dropdown_btn().click({ force: true });
+    peoplePom
       .select_People_Busniess_Option(randomPeopleBusniess)
       .click({ force: true });
-    peoplepom.verify_Selected_People_Busniess_Option_Visible(
+    peoplePom.verify_Selected_People_Busniess_Option_Visible(
       randomPeopleBusniess
     );
   });
@@ -63,7 +63,7 @@ describe("People Page Tests", function () {
         cy.get(":nth-child(5) > .btn").click({ force: true });
 
         // Select the specific business option from the dropdown
-        peoplepom
+        peoplePom
           .select_People_Busniess_Option(businessName)
           .click({ force: true });
 
@@ -82,19 +82,19 @@ describe("People Page Tests", function () {
     headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
-    peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
+    peoplePom.peopleBusiness_dropdown_btn().click({ force: true });
     cy.wait(2000);
 
-    peoplepom.select_People_Busniess_Option("Ventures").click({ force: true });
+    peoplePom.select_People_Busniess_Option("Ventures").click({ force: true });
     cy.wait(2000);
 
-    peoplepom.peopleFocus_Dropdown_btn().click({ force: true });
+    peoplePom.peopleFocus_Dropdown_btn().click({ force: true });
     cy.wait(2000);
 
-    peoplepom
+    peoplePom
       .select_People_Focus_Option(random_people_VenturesFocus)
       .click({ force: true });
-    peoplepom.verify_Selected_People_Focus_Option_Visible(
+    peoplePom.verify_Selected_People_Focus_Option_Visible(
       random_people_VenturesFocus
     );
   });
@@ -103,19 +103,19 @@ describe("People Page Tests", function () {
     headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
-    peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
+    peoplePom.peopleBusiness_dropdown_btn().click({ force: true });
     cy.wait(2000);
 
-    peoplepom.select_People_Busniess_Option("Credit").click({ force: true });
+    peoplePom.select_People_Busniess_Option("Credit").click({ force: true });
     cy.wait(2000);
 
-    peoplepom.peopleFocus_Dropdown_btn().click({ force: true });
+    peoplePom.peopleFocus_Dropdown_btn().click({ force: true });
     cy.wait(2000);
 
-    peoplepom
+    peoplePom
       .select_People_Focus_Option(random_people_CreditFocus)
       .click({ force: true });
-    peoplepom.verify_Selected_People_Focus_Option_Visible(
+    peoplePom.verify_Selected_People_Focus_Option_Visible(
       random_people_CreditFocus
     );
   });
@@ -124,21 +124,21 @@ describe("People Page Tests", function () {
     headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
-    peoplepom.peopleBusiness_dropdown_btn().click({ force: true });
+    peoplePom.peopleBusiness_dropdown_btn().click({ force: true });
     cy.wait(2000);
 
-    peoplepom
+    peoplePom
       .select_People_Busniess_Option("Private Equity")
       .click({ force: true });
     cy.wait(2000);
 
-    peoplepom.peopleFocus_Dropdown_btn().click({ force: true });
+    peoplePom.peopleFocus_Dropdown_btn().click({ force: true });
     cy.wait(2000);
 
-    peoplepom
+    peoplePom
       .select_People_Focus_Option(random_people_PrivateEquityFocus)
       .click({ force: true });
-    peoplepom.verify_Selected_People_Focus_Option_Visible(
+    peoplePom.verify_Selected_People_Focus_Option_Visible(
       random_people_PrivateEquityFocus
     );
   });
@@ -147,11 +147,11 @@ describe("People Page Tests", function () {
     headerPom.people_lnk().click({ force: true });
     cy.wait(3000);
 
-    peoplepom.set_searchField().type(random_peopleNames, { force: true });
+    peoplePom.set_searchField().type(random_peopleNames, { force: true });
     cy.wait(5000);
-    peoplepom.click_searchIcon().click({ force: true });
+    peoplePom.click_searchIcon().click({ force: true });
     cy.wait(4000);
-    peoplepom
+    peoplePom
       .verify_People_Name()
       .invoke("text")
       .should("eq", random_peopleNames);
@@ -171,14 +171,14 @@ describe("People Page Tests", function () {
       cy.log(`Processing normalized name: ${normalizedName}`);
 
       // Enter the normalized name into the search field
-      peoplepom
+      peoplePom
         .set_searchField()
         .clear({ force: true })
         .type(normalizedName, { force: true });
       cy.wait(2000);
 
       // Click search icon
-      peoplepom.click_searchIcon().click({ force: true });
+      peoplePom.click_searchIcon().click({ force: true });
       cy.wait(3000);
 
       // Check the result
@@ -193,7 +193,7 @@ describe("People Page Tests", function () {
           });
         } else {
           // Assert the displayed name matches the normalized input
-          peoplepom
+          peoplePom
             .verify_People_Name()
             .invoke("text")
             .then((displayedName) => {
@@ -208,7 +208,7 @@ describe("People Page Tests", function () {
       });
 
       // Clear the search field before the next iteration
-      peoplepom.set_searchField().clear();
+      peoplePom.set_searchField().clear();
     });
   });
 

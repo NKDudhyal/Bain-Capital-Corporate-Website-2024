@@ -1,7 +1,7 @@
 import {
   setupEnvironment,
   newsPom,
-  newsdetialPom,
+  newsDetialPom,
   randomYearOption,
   randomExistBusinessNews,
   randomExistYearNews,
@@ -50,7 +50,7 @@ describe("News Detail Page Tests", function () {
 
             // Validate breadcrumb matches captured news type
             let newsTypeCaptured = name.toLowerCase();
-            newsdetialPom
+            newsDetialPom
               .verifyBreadcrumbText()
               .invoke("text")
               .then((text) => {
@@ -107,7 +107,7 @@ describe("News Detail Page Tests", function () {
             // Validate breadcrumb matches captured business option
             let businessCaptured = name.toLowerCase();
             cy.log(businessCaptured);
-            newsdetialPom
+            newsDetialPom
               .verifyBreadcrumbText()
               .invoke("text")
               .then((text) => {
@@ -163,7 +163,7 @@ describe("News Detail Page Tests", function () {
             // Validate breadcrumb matches captured year
             let dateAndYearCaptured = name.toLowerCase();
             cy.log(dateAndYearCaptured);
-            newsdetialPom
+            newsDetialPom
               .verifyBreadcrumbText()
               .invoke("text")
               .then((text) => {
@@ -217,7 +217,7 @@ describe("News Detail Page Tests", function () {
             
 
             // Navigate back to the news list using breadcrumb link
-            newsdetialPom.clickOnNewsBreadcrumb().click({ force: true });
+            newsDetialPom.clickOnNewsBreadcrumb().click({ force: true });
 
             // Verify URL returns to the main news page
             cy.url().should("eq", "https://www.baincapital.com/news");
